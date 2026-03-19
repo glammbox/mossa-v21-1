@@ -1,0 +1,82 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+
+/* ─── THEME TOKENS ─────────────────────────────────────────────────────────── */
+:root,
+[data-theme="dark"] {
+  --bg:            #11161A;
+  --bg-elevated:   #172027;
+  --surface:       #1B252C;
+  --surface-soft:  #233038;
+  --text-primary:  #F2ECE2;
+  --text-secondary:#CBBFB0;
+  --text-muted:    #A69A8B;
+  --border:        #33434C;
+  --accent:        #A7B79B;
+  --accent-strong: #D8C7A8;
+  --hero-glow:     rgba(167,183,155,0.12);
+  --header-bg:     rgba(17,22,26,0.88);
+  --header-border: rgba(51,67,76,0.7);
+  --shadow-soft:   0 4px 24px rgba(0,0,0,0.32);
+  --card-hover-scale: 1.04;
+}
+
+[data-theme="light"] {
+  --bg:            #F6F1E8;
+  --bg-elevated:   #FBF7F0;
+  --surface:       #EFE7DA;
+  --surface-soft:  #E8DED0;
+  --text-primary:  #2A312F;
+  --text-secondary:#4E584C;
+  --text-muted:    #6E786D;
+  --border:        #D9D0C4;
+  --accent:        #5E6F5C;
+  --accent-strong: #8C7458;
+  --hero-glow:     rgba(94,111,92,0.12);
+  --header-bg:     rgba(246,241,232,0.92);
+  --header-border: rgba(217,208,196,0.8);
+  --shadow-soft:   0 4px 24px rgba(0,0,0,0.10);
+  --card-hover-scale: 1.04;
+}
+
+/* ─── GLOBALS ───────────────────────────────────────────────────────────────── */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    --header-height: 80px;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text-primary);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Ensure section anchors land below sticky header */
+  section[id] {
+    scroll-margin-top: calc(var(--header-height) + 16px);
+  }
+}
+
+/* ─── TYPOGRAPHY ────────────────────────────────────────────────────────────── */
+@layer base {
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', ui-serif, Georgia, serif;
+  }
+}
+
+/* ─── TRANSITIONS ───────────────────────────────────────────────────────────── */
+[data-theme] * {
+  transition-property: background-color, border-color, color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}

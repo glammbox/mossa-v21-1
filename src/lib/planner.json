@@ -1,0 +1,376 @@
+{
+  "projectName": "mossa-v3-ui-polish",
+  "templateBase": "landing-page.json + web-app.json hybrid",
+  "description": "FR-first luxury funeral florals polish pass for Mossa v3, evolving the live v2 site into a calmer, more refined editorial experience with corrected bottom-button behavior, a new minimal vector logo system, optimized asset categorization, and explicit browser-tested interaction flows for mobile and desktop.",
+  "deployTarget": "Vercel deployable ZIP",
+  "techStack": [
+    "React 19",
+    "Vite 8",
+    "TypeScript",
+    "TailwindCSS 4",
+    "motion",
+    "lenis"
+  ],
+  "stack": {
+    "framework": "React 19",
+    "bundler": "Vite 8",
+    "language": "TypeScript",
+    "styling": "TailwindCSS 4",
+    "animation": "motion",
+    "scroll": "lenis"
+  },
+  "fileCount": 18,
+  "pages": [
+    "Home (/)",
+    "Collection (/collection)",
+    "Sur mesure (/sur-mesure)",
+    "À propos (/a-propos)"
+  ],
+  "components": [
+    "SiteHeader",
+    "HeroEditorial",
+    "LogoMark",
+    "PresenceManifesto",
+    "CollectionPreview",
+    "CategoryFilterBar",
+    "ProductRail",
+    "InquiryBand",
+    "ZenFooter",
+    "BottomActionBar",
+    "ScrollToTopOnChangeBoundary",
+    "AssetStoryGrid",
+    "LanguageToggle"
+  ],
+  "hooks": [
+    "useScrollToTopOnFilterChange",
+    "useActiveLocale",
+    "useReducedMotionPref",
+    "useAssetCategories"
+  ],
+  "libs": [
+    "src/lib/content.ts",
+    "src/lib/asset-manifest.ts",
+    "src/lib/logo-system.ts",
+    "src/lib/test-scenarios.ts"
+  ],
+  "config": [
+    "package.json",
+    "vite.config.ts",
+    "tsconfig.json",
+    "components.json"
+  ],
+  "designSystem": {
+    "theme": "zen-funeral-luxury",
+    "palette": {
+      "background": "#F6F1E8",
+      "surface": "#EFE7DA",
+      "accent": "#5E6F5C",
+      "text": "#2E352E",
+      "stone": "#B7AEA1",
+      "line": "#D9D0C4"
+    },
+    "typography": {
+      "headline": "Elegant serif with restrained contrast, oversized spacing",
+      "body": "Neutral sans with high readability and generous line-height",
+      "button": "Uppercase micro-labels with wide tracking"
+    },
+    "motionPhilosophy": "Slow, meditative reveals only. No decorative bounce. Scroll-linked softness, opacity fades, and subtle elevation on hover.",
+    "aestheticGoals": [
+      "Cream / green / stone tranquility",
+      "Funeral dignity without heaviness",
+      "Editorial whitespace over dense commerce UI",
+      "Client-impressing visual calm on first viewport"
+    ]
+  },
+  "bilingualArchitecture": {
+    "defaultLanguage": "fr",
+    "bill96": true,
+    "secondaryLanguage": "en",
+    "rule": "French-first across navigation, CTAs, metadata, alt text, and testing. English remains secondary and non-prominent."
+  },
+  "routes": {
+    "primary": ["/", "/collection", "/sur-mesure", "/a-propos"],
+    "languageMode": "FR root-first with optional EN content toggle"
+  },
+  "structure": {
+    "appShell": "single-page editorial feel with lightweight multi-route support",
+    "contentSource": "client research/copy JSON normalized into content.ts",
+    "mediaSource": "clients/mossa/assets with categorized manifest and optimized derivatives",
+    "testingSource": "browser tool scenarios defined in src/lib/test-scenarios.ts"
+  },
+  "featureFixes": [
+    {
+      "id": "bottom-buttons-scroll-reset",
+      "summary": "Any bottom action button or category/filter change that swaps content must force a smooth scroll-to-top of the updated content region or page root.",
+      "implementation": [
+        "Create useScrollToTopOnFilterChange hook",
+        "Attach to BottomActionBar and CategoryFilterBar state changes",
+        "Respect reduced-motion by switching to instant scroll when needed",
+        "Prevent stale viewport issue on mobile after content swap"
+      ],
+      "acceptance": [
+        "Changing any bottom action returns user to top of the refreshed content",
+        "No double-scroll or jank",
+        "Works on mobile and desktop"
+      ]
+    },
+    {
+      "id": "new-clean-logo",
+      "summary": "Replace imperfect raster-first logo presentation with a smooth, faultless minimal SVG logo mark and wordmark system.",
+      "implementation": [
+        "Create src/components/LogoMark.tsx with inline SVG",
+        "Use client logo files as reference only, not final rendering source",
+        "Provide horizontal and icon-only variants",
+        "Ensure clean stroke curves and transparent background rendering"
+      ],
+      "acceptance": [
+        "Logo appears crisp on retina/mobile",
+        "No visible artifacting or jagged edges",
+        "Matches luxury zen tone"
+      ]
+    },
+    {
+      "id": "asset-research-categorization",
+      "summary": "Organize the 48 client assets into funeral-appropriate categories and optimization priorities.",
+      "implementation": [
+        "Create asset-manifest.ts grouping logo, brand reference, care, and product imagery",
+        "Tag product photos by likely use: urne/memorial, naissance, interieur, detail, supporting texture",
+        "Identify hero candidates and avoid mismatched cheerful imagery in memorial surfaces",
+        "Prepare optimization notes for WebP conversion/cropping without altering originals"
+      ],
+      "acceptance": [
+        "All supplied assets accounted for",
+        "Funeral themes correctly prioritized",
+        "Builder/Media can source from a single manifest"
+      ]
+    },
+    {
+      "id": "full-button-testing",
+      "summary": "Define explicit browser-tool verification flow for all major buttons.",
+      "implementation": [
+        "Document snapshot -> act/click -> compare state test cases",
+        "Verify route changes, content swaps, scroll resets, and CTA visibility",
+        "Include mobile and desktop viewport passes",
+        "Confirm FR labels remain primary"
+      ],
+      "acceptance": [
+        "Every primary CTA has a defined expected outcome",
+        "Bottom actions verified for scroll-to-top behavior",
+        "No dead-end button states"
+      ]
+    }
+  ],
+  "assetPlan": {
+    "fileCount": 48,
+    "categories": [
+      {
+        "name": "logos",
+        "files": [
+          "logo-active.jpg",
+          "logo-clean.jpg",
+          "logo-final.png",
+          "logo-header.jpg",
+          "logo-mossa-2.jpg",
+          "logo-mossa-animated.jpg",
+          "logo-mossa-cropped.jpg",
+          "logo-mossa-frame.jpg",
+          "logo-mossa.jpg",
+          "logo-no-white.png",
+          "logo-polish.png",
+          "logo-pure.png",
+          "logo-transparent-2.png",
+          "logo-transparent-clean.png",
+          "logo-transparent-soft.png",
+          "logo-transparent.png",
+          "logo-v2.png",
+          "logo-video-frame2.jpg",
+          "logo-video-transparent.png"
+        ]
+      },
+      {
+        "name": "brand-reference",
+        "files": [
+          "brand-notes-1.jpg",
+          "brand-notes-2.jpg",
+          "brand-notes-3.jpg",
+          "brand-notes-4.jpg",
+          "care-sheet.jpg"
+        ]
+      },
+      {
+        "name": "product-catalog",
+        "files": [
+          "product-1.jpg",
+          "product-2.jpg",
+          "product-3.jpg",
+          "product-4.jpg",
+          "product-5.jpg",
+          "product-6.jpg",
+          "product-7.jpg",
+          "product-8.jpg",
+          "product-9.jpg",
+          "product-10.jpg",
+          "product-11.jpg",
+          "product-12.jpg",
+          "product-13.jpg",
+          "product-14.jpg",
+          "product-15.jpg",
+          "product-16.jpg",
+          "product-17.jpg",
+          "product-18.jpg",
+          "product-19.jpg",
+          "product-20.jpg",
+          "product-21.jpg",
+          "product-22.jpg",
+          "product-23.jpg",
+          "product-24.jpg"
+        ]
+      }
+    ],
+    "subCategorizationTargets": [
+      "memorial / urne-compatible",
+      "birth / softer celebratory",
+      "interior sculptural",
+      "detail / texture / close-up",
+      "supporting ambient"
+    ],
+    "optimizationRules": [
+      "Keep originals untouched in clients/mossa/assets",
+      "Create optimized derivatives for UI use only",
+      "Prefer WebP for shipped UI images",
+      "Preserve transparent PNG only where logo fidelity requires it",
+      "Use consistent aspect ratios per section to maintain zen composition"
+    ]
+  },
+  "contentStrategy": {
+    "sourceFiles": [
+      "/home/austi/.openclaw/workspace/clients/mossa/PROJECT.md",
+      "/home/austi/.openclaw/workspace/clients/mossa/research/copy.json",
+      "/home/austi/.openclaw/workspace/clients/mossa/research/research-output.json",
+      "/home/austi/.openclaw/workspace/clients/mossa/research/market-output.json"
+    ],
+    "voice": "Contemplative, refined, non-clinical, non-generic, FR-native Quebec luxury",
+    "homepageSections": [
+      "Quiet hero presence",
+      "Memorial intention / manifesto",
+      "Selected arrangements preview",
+      "Funeral-specific reassurance band",
+      "Custom inquiry invitation",
+      "Editorial about / atelier close"
+    ]
+  },
+  "pagesDetail": [
+    {
+      "path": "/",
+      "purpose": "Emotion-first landing experience with strongest visual polish",
+      "keyComponents": ["SiteHeader", "HeroEditorial", "PresenceManifesto", "CollectionPreview", "InquiryBand", "ZenFooter"]
+    },
+    {
+      "path": "/collection",
+      "purpose": "Curated arrangement browsing with category filters and bottom actions",
+      "keyComponents": ["CategoryFilterBar", "ProductRail", "BottomActionBar", "ScrollToTopOnChangeBoundary"]
+    },
+    {
+      "path": "/sur-mesure",
+      "purpose": "Custom memorial / interior request pathway",
+      "keyComponents": ["HeroEditorial", "InquiryBand", "AssetStoryGrid"]
+    },
+    {
+      "path": "/a-propos",
+      "purpose": "Brand trust, atelier philosophy, Quebec craftsmanship framing",
+      "keyComponents": ["LogoMark", "PresenceManifesto", "AssetStoryGrid", "ZenFooter"]
+    }
+  ],
+  "interactionTesting": {
+    "required": true,
+    "browserSequence": [
+      "snapshot current state",
+      "act/click target button",
+      "compare changed route/content/scroll position",
+      "repeat on mobile and desktop"
+    ],
+    "mustTest": [
+      "Hero primary CTA",
+      "Collection category buttons",
+      "Bottom action buttons",
+      "Language toggle",
+      "Inquiry CTA",
+      "Header nav"
+    ],
+    "successSignals": [
+      "Scroll resets when content context changes",
+      "CTA destination always visually obvious",
+      "No clipped bottom-sheet or hidden content after action",
+      "FR labels remain default on reload"
+    ]
+  },
+  "performanceBudget": {
+    "lcp": "< 2.5s",
+    "cls": "< 0.1",
+    "imageStrategy": "Prioritize one hero image, lazy-load supporting galleries, compress product set aggressively",
+    "fontStrategy": "Use restrained typography footprint, self-host or minimal variable fonts"
+  },
+  "batchPlan": [
+    {
+      "batch": 1,
+      "label": "Foundation + Shell",
+      "files": [
+        "package.json",
+        "vite.config.ts",
+        "tsconfig.json",
+        "components.json",
+        "src/main.tsx",
+        "src/App.tsx"
+      ],
+      "maxFiles": 7
+    },
+    {
+      "batch": 2,
+      "label": "Core Experience Components",
+      "files": [
+        "src/components/SiteHeader.tsx",
+        "src/components/HeroEditorial.tsx",
+        "src/components/LogoMark.tsx",
+        "src/components/PresenceManifesto.tsx",
+        "src/components/CollectionPreview.tsx",
+        "src/components/BottomActionBar.tsx",
+        "src/components/ZenFooter.tsx"
+      ],
+      "maxFiles": 7
+    },
+    {
+      "batch": 3,
+      "label": "Behavior + Data + Styling",
+      "files": [
+        "src/components/CategoryFilterBar.tsx",
+        "src/hooks/useScrollToTopOnFilterChange.ts",
+        "src/hooks/useAssetCategories.ts",
+        "src/lib/content.ts",
+        "src/lib/asset-manifest.ts",
+        "src/lib/test-scenarios.ts",
+        "src/index.css"
+      ],
+      "maxFiles": 7
+    }
+  ],
+  "handoffs": {
+    "content": {
+      "primaryPath": "/home/austi/.openclaw/workspace/clients/mossa/research/copy.json",
+      "supportingPaths": [
+        "/home/austi/.openclaw/workspace/clients/mossa/PROJECT.md",
+        "/home/austi/.openclaw/workspace/clients/mossa/research/research-output.json",
+        "/home/austi/.openclaw/workspace/clients/mossa/research/market-output.json"
+      ],
+      "notes": "Normalize FR-first copy into content.ts and keep EN secondary. Preserve funeral dignity and avoid cheerful generic floristry language."
+    },
+    "media": {
+      "primaryPath": "/home/austi/.openclaw/workspace/clients/mossa/assets",
+      "notes": "Use manifest-driven categorization before UI placement. Prefer memorial-suitable imagery for funeral pathways and reserve softer celebratory imagery for naissance or atelier storytelling."
+    }
+  },
+  "blueprintNotes": {
+    "designPattern": "Memorial editorial flow — the site behaves like a calm guided passage, where each route transition and filter action restores orientation through automatic scroll reset, preserving dignity and preventing cognitive friction during emotional browsing.",
+    "templateReasoning": "No exact nextjs-ui-polish template existed. Best match was landing-page for editorial marketing structure, augmented with web-app route/data behavior and FR-first luxury constraints from prior Mossa work.",
+    "clientImpressMove": "Introduce a bespoke SVG logo system plus stone-paper texture, measured motion, and carefully cropped memorial imagery so the site feels custom-designed rather than merely polished."
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "trends": [
+    {
+      "title": "Tailwind v4 token-first theming is the 2026 premium UI baseline",
+      "summary": "High-end React/Vite builds are moving to Tailwind v4 CSS-first theming with @theme tokens, OKLCH palettes, cascade layers, container queries, and the first-party Vite plugin for speed and consistency.",
+      "whyItMatters": "For a zen luxury floral UI, this makes it easier to build calm light/dark surfaces, consistent spacing, and soft accent ramps without JS config sprawl.",
+      "sources": [
+        "https://tailwindcss.com/blog/tailwindcss-v4",
+        "https://tailwindcss.com/docs/theme",
+        "https://ui.shadcn.com/docs/tailwind-v4"
+      ]
+    },
+    {
+      "title": "Luxury 2026 web aesthetics favor restraint over spectacle",
+      "summary": "Winning premium sites use quiet motion, generous whitespace, editorial typography, soft depth, blurred glass only as accent, and subtle organic gradients/grain instead of loud neon or constant animation.",
+      "whyItMatters": "Mossa v3 should feel serene and expensive: warm stone, stem green, ivory, smoke, and muted gold — not techy gloss.",
+      "sources": [
+        "https://tailwindcss.com/docs/theme",
+        "https://motion.dev/docs/react"
+      ]
+    },
+    {
+      "title": "Lenis-style smooth scroll is now standard for premium storytelling builds",
+      "summary": "Lenis positions itself as accessible smooth scrolling that keeps native APIs, sticky positioning, and the native scrollbar while staying lightweight and main-thread based.",
+      "whyItMatters": "Good fit for floral storytelling sections, hero-to-gallery transitions, and calm anchor jumps without breaking native behavior.",
+      "sources": [
+        "https://www.lenis.dev/"
+      ]
+    },
+    {
+      "title": "Motion for React has fully shifted to the motion package",
+      "summary": "2026 guidance is to install `motion` and import from `motion/react`, using the library selectively for layout, scroll reveal, SVG paths, and micro-interactions while leaving trivial transitions to CSS.",
+      "whyItMatters": "Prevents outdated framer-motion imports and keeps bundle strategy cleaner on a mostly-static luxury landing page.",
+      "sources": [
+        "https://motion.dev/docs/react"
+      ]
+    },
+    {
+      "title": "Asset pipelines now assume responsive formats and transformation CDNs",
+      "summary": "Modern image delivery centers on server-side resizing, AVIF/WebP negotiation, metadata stripping, DPR-aware variants, and SVG for logos/line art; Cloudinary documents this as core optimization practice.",
+      "whyItMatters": "Critical for a 48-asset floral/funeral image set where visual richness can easily tank LCP if originals are shipped directly.",
+      "sources": [
+        "https://cloudinary.com/documentation/image_optimization",
+        "https://www.pexels.com/license"
+      ]
+    },
+    {
+      "title": "Browser test strategy has shifted toward resilient user-facing contracts",
+      "summary": "Playwright best practices emphasize role/text locators, isolation, and testing visible behavior rather than DOM structure or class names.",
+      "whyItMatters": "For Mossa v3 polish, tests should verify nav scroll-to-top, CTA visibility, section entry, and responsive behavior without coupling to Tailwind classes.",
+      "sources": [
+        "https://playwright.dev/docs/best-practices"
+      ]
+    }
+  ],
+  "bestPractices": [
+    {
+      "title": "Build the zen theme as semantic design tokens, not raw utility soup",
+      "summary": "Define `@theme` tokens for surface, text, border, accent, shadow, radius, spacing, and motion timing using OKLCH values. Map components to semantic tokens like `--color-surface-muted` and `--color-accent-bloom`.",
+      "implementation": [
+        "Use Tailwind v4 `@theme` in CSS, not sprawling JS config",
+        "Create 2–3 surface elevations only: base, lifted, overlay",
+        "Keep accent usage under ~10–15% of visible UI to preserve luxury restraint"
+      ],
+      "sources": [
+        "https://tailwindcss.com/docs/theme",
+        "https://tailwindcss.com/blog/tailwindcss-v4"
+      ]
+    },
+    {
+      "title": "Use Motion only where meaning is added; keep simple effects in CSS",
+      "summary": "Use `motion/react` for hero fade/translate, image parallax, SVG path draw, and layout-aware reveals. Keep hover color changes, opacity fades, and button polish in CSS to minimize runtime overhead.",
+      "implementation": [
+        "Canonical import: `import { motion } from 'motion/react'`",
+        "Respect reduced motion with Motion hooks or conditional variants",
+        "Avoid long chained scroll reveals on mobile; keep durations soft and short"
+      ],
+      "sources": [
+        "https://motion.dev/docs/react"
+      ]
+    },
+    {
+      "title": "Integrate Lenis with explicit anchor/scrollTo control",
+      "summary": "Use Lenis for the page scroller, then route nav clicks through a single `scrollTo` abstraction with offsets for sticky headers and a dedicated scroll-to-top action on logo/nav home clicks.",
+      "implementation": [
+        "Centralize section IDs and scroll offsets",
+        "Use native semantics for links/buttons and ensure keyboard activation works",
+        "Verify sticky sections, focus states, and in-page navigation still behave correctly"
+      ],
+      "sources": [
+        "https://www.lenis.dev/"
+      ]
+    },
+    {
+      "title": "Treat the SVG logo as a product asset, not an export afterthought",
+      "summary": "Create/export the logo as clean vectors with simplified paths, outlined strokes where needed, stable viewBox dimensions, and no raster filters unless absolutely necessary. Optimize with an SVG minifier before shipping.",
+      "implementation": [
+        "Design master in Figma/Illustrator/Inkscape, then export plain SVG",
+        "Normalize fills/strokes, remove editor metadata/groups/clipping junk",
+        "Test crisp rendering at navbar, footer, and retina sizes on light/dark backgrounds"
+      ],
+      "sources": [
+        "https://cloudinary.com/documentation/image_optimization"
+      ]
+    },
+    {
+      "title": "For 48 image assets, pre-categorize and automate transforms",
+      "summary": "Split assets into hero, card, gallery, and thumb classes, each with target dimensions, aspect ratio, quality rules, and lazy/eager policy. Deliver responsive sizes server-side instead of shipping originals.",
+      "implementation": [
+        "Hero: eager, high-priority, limited count",
+        "Cards/gallery: responsive srcset, lazy below fold",
+        "Use AVIF/WebP fallback strategy and strip metadata",
+        "Prefer SVG for line art and simple ornaments"
+      ],
+      "sources": [
+        "https://cloudinary.com/documentation/image_optimization"
+      ]
+    },
+    {
+      "title": "Sequence browser tests by user journey, then by breakpoint",
+      "summary": "Write Playwright tests around visible flows: first render, nav anchor jumps, scroll-to-top/logo behavior, mobile menu, CTA interactions, and key responsive states. Use role/text locators and isolate tests.",
+      "implementation": [
+        "Desktop smoke path first, then mobile portrait path",
+        "Add one reduced-motion test to catch animation regressions/accessibility issues",
+        "Stub or control remote media where possible to reduce flaky tests"
+      ],
+      "sources": [
+        "https://playwright.dev/docs/best-practices"
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "title": "Adopt a 'quiet luxury ikebana' visual system",
+      "summary": "Lean into asymmetry, negative space, thin botanical dividers, and one restrained floral accent hue over neutral mineral surfaces. Avoid obvious wedding-template softness or generic funeral-site heaviness.",
+      "priority": "high"
+    },
+    {
+      "title": "Make the nav/logo always return to the top with graceful easing",
+      "summary": "Use a single shared Lenis `scrollTo(0)` path for logo click, home nav item, and optional floating return-top button. This directly resolves the planner's scroll-to-top polish issue.",
+      "priority": "high"
+    },
+    {
+      "title": "Ship an all-vector brand layer",
+      "summary": "Convert logo + ornamental separators/leaves into SVG so the brand stays crisp and elegant across desktop, mobile, and browser zoom. Use path-draw or subtle opacity reveal only on first hero entrance.",
+      "priority": "high"
+    },
+    {
+      "title": "Create an image taxonomy before touching optimization",
+      "summary": "Label the 48 assets by content role and emotional value before batching Cloudinary transforms. Funeral florals often need different crops than product-like bouquet shots; one global crop rule will look cheap.",
+      "priority": "high"
+    },
+    {
+      "title": "Use Pexels only for filler, not for signature brand moments",
+      "summary": "Pexels licensing is permissive for commercial use and attribution is not required, but stock florals can dilute premium identity. Reserve Pexels for secondary/supportive imagery and let hero moments feel bespoke.",
+      "priority": "medium",
+      "sources": [
+        "https://www.pexels.com/license",
+        "https://help.pexels.com/hc/en-us/articles/360042295214-Can-I-use-the-photos-and-videos-for-a-commercial-project"
+      ]
+    },
+    {
+      "title": "Add a luxury 'zen elevation' layer instead of more animation",
+      "summary": "Use feathered shadows, subtle border translucency, soft vignette gradients, and paper/grain texture at 2–4% opacity to create depth. This will make Mossa feel more premium than adding more motion.",
+      "priority": "medium"
+    },
+    {
+      "title": "Non-obvious opportunity: ritual guidance microcopy",
+      "summary": "Most floral/funeral sites stop at products. Add one serene editorial module that gently guides users through selection moments (sympathy, memorial, service, tribute) with calm copy and curated pathways. This differentiates the brand emotionally, not just visually.",
+      "priority": "high"
+    }
+  ],
+  "meta": {
+    "project": "Mossa v3 polish",
+    "stack": ["React 19", "Vite 8", "Tailwind CSS 4", "motion", "Lenis"],
+    "generatedAt": "2026-03-18T13:23:00-04:00",
+    "cacheKey": "react-19-vite-8-tailwindcss-4-2026-trends"
+  }
+}

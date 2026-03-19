@@ -1,0 +1,128 @@
+{
+  "locale": {
+    "primary": "fr-CA",
+    "secondary": "en-CA"
+  },
+  "hero": {
+    "headline": "Un lieu de mémoire pensé pour l’apaisement",
+    "headlineAlt": [
+      "Honorer une vie dans la douceur",
+      "Le souvenir trouve ici son calme"
+    ],
+    "subheadline": "Mossa accompagne les familles du Québec avec des rituels sobres, une présence attentive et un cadre inspiré par la nature, pour traverser le deuil avec délicatesse.",
+    "ctaPrimary": "Planifier un accompagnement",
+    "ctaSecondary": "See services"
+  },
+  "intro": {
+    "eyebrow": "Approche",
+    "title": "La simplicité comme forme de respect",
+    "body": "Dans les moments les plus fragiles, tout devrait être plus simple. Notre approche réunit accompagnement funéraire, espaces de recueillement et gestes essentiels dans une esthétique calme, sans surcharge ni discours imposé. Chaque détail est pensé pour laisser la place à l’essentiel : la mémoire, la présence et le temps.",
+    "cta": "Découvrir l’approche"
+  },
+  "sections": [
+    {
+      "id": "services",
+      "eyebrow": "Services",
+      "title": "Des services sobres, humains et clairs",
+      "body": "Préarrangements, cérémonie, crémation, accompagnement administratif et moments de recueillement : nous guidons chaque étape avec une attention concrète, dans le respect des volontés, des croyances et du rythme de chaque famille.",
+      "points": [
+        "Préarrangements personnalisés",
+        "Accompagnement lors du décès",
+        "Cérémonies intimes ou rassemblements élargis",
+        "Soutien administratif avec clarté"
+      ],
+      "ctaPrimary": "Explorer les services",
+      "ctaSecondary": "Request information"
+    },
+    {
+      "id": "ritual",
+      "eyebrow": "Rituel",
+      "title": "Créer un hommage à la mesure d’une vie",
+      "body": "Un hommage n’a pas besoin d’être grand pour être profond. Nous aidons à composer des moments vrais : lectures choisies, musique, objets symboliques, gestes de recueillement et mise en espace harmonieuse. Le résultat demeure simple, digne et profondément personnel.",
+      "ctaPrimary": "Imaginer l’hommage",
+      "ctaSecondary": "Plan a tribute"
+    },
+    {
+      "id": "spaces",
+      "eyebrow": "Lieux",
+      "title": "Des espaces qui invitent au silence",
+      "body": "Matières naturelles, lumière douce, teintes pierre et végétales : nos lieux sont conçus pour apaiser plutôt que distraire. On y respire plus lentement. On s’y rassemble sans pression. Le cadre soutient ce que les mots ne peuvent pas toujours porter.",
+      "ctaPrimary": "Voir les lieux",
+      "ctaSecondary": "View spaces"
+    },
+    {
+      "id": "guidance",
+      "eyebrow": "Présence",
+      "title": "Être guidé, sans jamais être pressé",
+      "body": "Au Québec, les familles cherchent souvent une présence discrète mais solide. C’est ce que nous offrons : expliquer clairement, proposer sans imposer, prendre en charge ce qui peut l’être, et laisser à chacun l’espace pour vivre ce moment à sa façon.",
+      "ctaPrimary": "Parler à une conseillère",
+      "ctaSecondary": "Speak with an advisor"
+    }
+  ],
+  "featuredCards": [
+    {
+      "name": "Prévoir avec sérénité",
+      "tagline": "Décider à tête reposée",
+      "description": "Les préarrangements permettent d’exprimer ses volontés, d’alléger les proches et d’aborder l’avenir avec plus de paix.",
+      "cta": "En savoir plus"
+    },
+    {
+      "name": "Accompagner le présent",
+      "tagline": "Soutenir chaque étape",
+      "description": "Lorsqu’un décès survient, nous coordonnons les démarches et les choix essentiels avec calme, précision et tact.",
+      "cta": "Obtenir du soutien"
+    },
+    {
+      "name": "Honorer en douceur",
+      "tagline": "Un hommage juste",
+      "description": "Du geste le plus simple à la cérémonie complète, nous façonnons un hommage fidèle à la personne disparue.",
+      "cta": "Préparer l’hommage"
+    }
+  ],
+  "about": {
+    "eyebrow": "À propos",
+    "title": "Une sensibilité ancrée ici",
+    "body": "Mossa s’adresse aux familles québécoises qui recherchent plus qu’un service : une manière juste d’habiter le deuil. Notre regard privilégie la retenue, la beauté naturelle et la qualité de présence. Nous croyons qu’un accompagnement bien pensé peut alléger le poids des décisions, et offrir un peu de calme au cœur de l’épreuve."
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Commençons simplement",
+    "body": "Que vous traversiez un décès, souhaitiez planifier à l’avance ou visitiez nos lieux, nous sommes là pour vous répondre avec attention et discrétion.",
+    "ctaPrimary": "Nous joindre",
+    "ctaSecondary": "Book a consultation"
+  },
+  "footer": {
+    "brandTagline": "Sobriété, présence, mémoire",
+    "contactLine": "Accompagnement funéraire et préarrangements au Québec"
+  },
+  "ctas": [
+    {
+      "label": "Planifier un accompagnement",
+      "lang": "fr"
+    },
+    {
+      "label": "Découvrir l’approche",
+      "lang": "fr"
+    },
+    {
+      "label": "Explorer les services",
+      "lang": "fr"
+    },
+    {
+      "label": "Parler à une conseillère",
+      "lang": "fr"
+    },
+    {
+      "label": "See services",
+      "lang": "en"
+    },
+    {
+      "label": "Plan a tribute",
+      "lang": "en"
+    },
+    {
+      "label": "Book a consultation",
+      "lang": "en"
+    }
+  ]
+}

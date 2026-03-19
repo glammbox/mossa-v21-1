@@ -1,0 +1,43 @@
+{
+  "icpProfile": {
+    "demographics": {
+      "location": "Quebec, Canada (primarily Montreal, Quebec City)",
+      "familyStructure": "Affluent families, ages 45-70 (decision-makers), multigenerational (including adult children 25-45)",
+      "socioeconomic": "Upper-middle to high-net-worth (estates $1M+), professionals/executives in finance, law, real estate",
+      "language": "French-primary (Bill 96 compliant), bilingual FR/EN acceptable for premium services"
+    },
+    "psychographics": {
+      "mindset": "Contemplative, introspective, seeking dignity and solace in grief",
+      "values": "Tasteful restraint over ostentation; heritage preservation; privacy; environmental consciousness (sustainable florals)",
+      "painPoints": "Overly commercial funerals, language barriers in services, lack of personalized digital memorials",
+      "aspirations": "Timeless, elegant tribute that honors loved one; seamless mobile access for family sharing",
+      "emotionalCore": "Zen tranquility amid loss – stone-like permanence, gentle natural movement evoking life's quiet beauty"
+    },
+    "behaviors": {
+      "research": "Discreet Google searches in French ('fleurs funéraires luxe Québec'), family referrals, estate lawyers",
+      "purchase": "High willingness to pay for exclusivity (CAD 5k-15k+ floral/memorial packages)",
+      "digital": "Mobile-first for planning/sharing (private family portals), subtle interactivity preferred"
+    }
+  },
+  "visualTone": {
+    "palette": {
+      "primary": "Cream (#F5F5F0), soft sage green (#A8B5A2), cool stone gray (#D9D4C9)",
+      "accents": "Muted ivory (#FDF6E3), deep forest (#5D6D4E)",
+      "neutral": "Warm taupe (#BFA899) for subtle depth"
+    },
+    "typography": {
+      "headings": "Serif hierarchy (e.g., Garamond or Playfair Display: elegant, 48-72pt, letter-spaced)",
+      "body": "Clean sans-serif (e.g., Avenir Next: readable, 16-20pt)",
+      "frenchAccents": "Support for é, à, ç with refined kerning"
+    },
+    "imagery": {
+      "style": "Memorial editorial – close-up florals (lilies, eucalyptus) on stone surfaces, soft-focus natural light",
+      "mood": "Zen calm: contemplative minimalism, no harsh contrasts"
+    },
+    "animations": {
+      "2026Trends": "Stone textures (subtle parallax scroll), sway anims (petals/greens 0.5-1s ease-in-out)",
+      "microInteractions": "Hover blooms (scale 1.05, opacity fade), mobile memorial flow (smooth swipe transitions)"
+    },
+    "layout": "Generous whitespace, vertical rhythm, mobile-optimized (thumb-friendly nav, portrait priority)"
+  }
+}
