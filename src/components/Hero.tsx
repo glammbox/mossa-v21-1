@@ -34,8 +34,8 @@ export function Hero({ locale }: HeroProps) {
       {/* Full-bleed background image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/tapis/tapis-05-zen-japanese-orchid.jpg"
-          alt="Tapis d'urne Mossä — ambiance zen japonaise"
+          src="/images/product-2.jpg"
+          alt="Création végétale Mossä — jardin zen botanique"
           className="h-full w-full object-cover object-center"
           loading="eager"
         />

@@ -39,8 +39,8 @@ export function Engagement({ locale }: EngagementProps) {
               style={{ border: "1px solid var(--border)" }}
             >
               <img
-                src="/images/tapis/tapis-06-marble-gold-ornate.jpg"
-                alt={locale === "fr" ? "Tapis d'urne sur commande Mossä" : "Custom Mossä urn carpet"}
+                src="/images/product-5.jpg"
+                alt={locale === "fr" ? "Arrangement végétal sur commande Mossä" : "Custom Mossä botanical arrangement"}
                 className="aspect-[4/3] w-full object-cover object-center"
                 loading="lazy"
               />
@@ -54,7 +54,7 @@ export function Engagement({ locale }: EngagementProps) {
               }}
             >
               <img
-                src="/images/tapis/tapis-04-walnut-crystal-calla.jpg"
+                src="/images/product-6.jpg"
                 alt=""
                 className="aspect-square w-full object-cover"
                 loading="lazy"

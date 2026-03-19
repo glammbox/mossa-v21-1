@@ -5,7 +5,7 @@ export const copy = {
     nav: {
       home: "Accueil",
       collection: "Collection",
-      rituels: "Rituels",
+      rituels: "Services",
       aPropos: "À propos",
       engagement: "Contact",
     },
@@ -159,7 +159,7 @@ export const copy = {
     nav: {
       home: "Home",
       collection: "Collection",
-      rituels: "Rituals",
+      rituels: "Services",
       aPropos: "About",
       engagement: "Contact",
     },
