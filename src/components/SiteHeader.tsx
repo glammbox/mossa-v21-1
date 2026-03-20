@@ -32,9 +32,9 @@ export function SiteHeader({
 
   const navItems = [
     { href: "#hero", label: t.home },
-    { href: "#collection", label: t.collection },
-    { href: "#services", label: t.rituels },
     { href: "#a-propos", label: t.aPropos },
+    { href: "#services", label: t.rituels },
+    { href: "#collection", label: t.collection },
     { href: "#engagement", label: t.engagement },
   ];
 

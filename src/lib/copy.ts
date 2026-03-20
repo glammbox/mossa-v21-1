@@ -4,9 +4,9 @@ export const copy = {
   fr: {
     nav: {
       home: "Accueil",
-      collection: "Collection",
-      rituels: "Services",
       aPropos: "À propos",
+      rituels: "Services",
+      collection: "Galerie",
       engagement: "Contact",
     },
     hero: {
@@ -14,7 +14,7 @@ export const copy = {
       headline: "L'art végétal qui prend\nracine dans votre histoire.",
       subheadline:
         "Créations vivantes, émotions durables. Mossä sculpte la nature pour vos moments de vie.",
-      ctaPrimary: "Voir la collection",
+      ctaPrimary: "Voir la galerie",
       ctaSecondary: "En savoir plus",
     },
     about: {
@@ -26,6 +26,12 @@ export const copy = {
         "Inspirées par l'esthétique Kusamono et le minimalisme Zen, nos créations se distinguent par leur minutie et leur aspect structuré. Chaque montage est une pièce unique, réalisée avec une attention artisanale.",
       quote:
         "Le design organique, du salon aux grands moments de l'âme.",
+    },
+    gallery: {
+      eyebrow: "Galerie",
+      title: "Nos créations",
+      subtitle:
+        "Chaque pièce est réalisée à la main, sur commande. Une création unique pour chaque moment de vie.",
     },
     collection: {
       eyebrow: "Tapis d'Urne",
@@ -44,24 +50,53 @@ export const copy = {
       ],
     },
     rituels: {
-      eyebrow: "Rituels végétaux",
-      title: "Au-delà du décor",
+      eyebrow: "Ce que nous créons",
+      title: "L'art végétal pour\nchaque moment de vie.",
       subtitle:
-        "Nous avons développé une expertise unique pour accompagner vos moments les plus personnels.",
+        "Des créations sur mesure pour embellir vos espaces et accompagner vos moments les plus précieux.",
+      botanical: {
+        label: "Art végétal",
+        name: "Arrangements Végétaux",
+        desc: "Compositions vivantes sur mesure pour embellir votre intérieur, terrasse ou espace de vie. Chaque pièce est unique, réalisée à la main.",
+        cta: "Découvrir",
+      },
+      hotels: {
+        label: "Espaces professionnels",
+        name: "Hôtels & Lobbies",
+        desc: "Des créations végétales monumentales qui transforment vos espaces de réception en expériences mémorables. Design botanique sur mesure.",
+        cta: "Découvrir",
+      },
+      architecture: {
+        label: "Architecture végétale",
+        name: "Architecture Végétale",
+        desc: "Murs végétaux, jardins intérieurs, installations botaniques. L'art de structurer l'espace avec le vivant.",
+        cta: "Découvrir",
+      },
       tapis: {
         label: "Rituel funéraire",
-        name: "Le Tapis d'Urne Végétal",
-        desc:
-          "Une alternative vivante et solidaire pour les rituels funéraires. Un caisson de bois où la vie entoure le départ, permettant à chaque proche de repartir avec une petite plante, symbole de mémoire et de continuité.",
+        name: "Rituel Funéraire",
+        desc: "Une alternative vivante et solidaire pour les rituels funéraires. La nature entoure le départ — chaque proche repart avec une plante, symbole de continuité.",
         cta: "Découvrir",
       },
-      bouquet: {
+      careGuide: {
+        label: "Entretien",
+        name: "Guide d'Entretien",
+        desc: "Conseils simples et gestes essentiels pour garder votre création Mossä vivante, épanouie et magnifique au fil du temps.",
+        cta: "Consulter",
+      },
+      newborns: {
         label: "Rituel de naissance",
-        name: "Le Bouquet de Naissance Éternel",
-        desc:
-          "Un duo de plantes symbolisant la croissance partagée entre l'enfant et ses parents. Un cadeau qui grandit, évolue et s'épanouit au rythme de la famille.",
+        name: "Nouveau-Nés",
+        desc: "Un cadeau végétal pour célébrer l'arrivée d'un enfant. Une composition douce, symbole de croissance partagée entre l'enfant et ses parents — un souvenir qui grandit avec lui.",
         cta: "Découvrir",
       },
+    },
+    tapisUrne: {
+      eyebrow: "Tapis d'Urne · Fait au Québec",
+      title: "Entourer le départ\nd'une beauté vivante.",
+      subtitle:
+        "Chaque tapis d'urne est une pièce unique, réalisée à la main. Une alternative vivante et solidaire — chaque proche repart avec une petite plante, symbole de mémoire et de continuité.",
+      cta: "Demander un devis",
     },
     careGuide: {
       eyebrow: "Fiche d'entretien",
@@ -139,7 +174,7 @@ export const copy = {
         "Qu'il s'agisse d'embellir votre intérieur, vos terrasses ou vos espaces professionnels, Mossä apporte une touche créative et experte à chaque projet. Chaque œuvre est réalisée exclusivement sur commande, garantissant une personnalisation totale et une fraîcheur absolue.",
       quote: "Laissez la nature entrer chez vous, avec intention.",
       ctaPrimary: "Nous contacter",
-      ctaSecondary: "Voir la collection",
+      ctaSecondary: "Voir la galerie",
     },
     footer: {
       tagline: "La nature sculptée pour vos moments de vie.",
@@ -148,8 +183,8 @@ export const copy = {
       rights: "© 2025 Mossä. Tous droits réservés.",
       links: {
         home: "Accueil",
-        collection: "Collection",
-        rituels: "Rituels",
+        collection: "Galerie",
+        rituels: "Services",
         aPropos: "À propos",
         contact: "Contact",
       },
@@ -158,9 +193,9 @@ export const copy = {
   en: {
     nav: {
       home: "Home",
-      collection: "Collection",
-      rituels: "Services",
       aPropos: "About",
+      rituels: "Services",
+      collection: "Gallery",
       engagement: "Contact",
     },
     hero: {
@@ -168,7 +203,7 @@ export const copy = {
       headline: "The botanical art that\ntakes root in your story.",
       subheadline:
         "Living creations, lasting emotions. Mossä sculpts nature for your life's most meaningful moments.",
-      ctaPrimary: "View collection",
+      ctaPrimary: "View gallery",
       ctaSecondary: "Learn more",
     },
     about: {
@@ -180,6 +215,12 @@ export const copy = {
         "Inspired by Kusamono aesthetics and Zen minimalism, our creations are distinguished by their precision and structured elegance. Each arrangement is a unique piece, made with artisanal attention.",
       quote:
         "Organic design, from the living room to the grand moments of the soul.",
+    },
+    gallery: {
+      eyebrow: "Gallery",
+      title: "Our creations",
+      subtitle:
+        "Each piece is handcrafted, made to order. A unique creation for every life moment.",
     },
     collection: {
       eyebrow: "Urn Carpets",
@@ -198,24 +239,53 @@ export const copy = {
       ],
     },
     rituels: {
-      eyebrow: "Botanical Rituals",
-      title: "Beyond decoration",
+      eyebrow: "What we create",
+      title: "Botanical art for\nevery life moment.",
       subtitle:
-        "We have developed a unique expertise to accompany your most personal moments.",
+        "Bespoke creations to beautify your spaces and accompany your most precious moments.",
+      botanical: {
+        label: "Botanical Art",
+        name: "Botanical Arrangements",
+        desc: "Bespoke living compositions to beautify your home, terrace, or living space. Each piece is unique, handcrafted to order.",
+        cta: "Discover",
+      },
+      hotels: {
+        label: "Professional spaces",
+        name: "Hotels & Lobbies",
+        desc: "Monumental botanical creations that transform your reception spaces into memorable experiences. Custom botanical design.",
+        cta: "Discover",
+      },
+      architecture: {
+        label: "Botanical architecture",
+        name: "Botanical Architecture",
+        desc: "Living walls, indoor gardens, botanical installations. The art of structuring space with living plants.",
+        cta: "Discover",
+      },
       tapis: {
         label: "Memorial ritual",
-        name: "The Botanical Urn Carpet",
-        desc:
-          "A living and compassionate alternative for memorial rituals. A wooden case where life surrounds the departure, allowing each loved one to take home a small plant — a symbol of memory and continuity.",
+        name: "Memorial Ritual",
+        desc: "A living and compassionate alternative for memorial rituals. Nature surrounds the farewell — each loved one takes home a plant as a symbol of continuity.",
         cta: "Discover",
       },
-      bouquet: {
+      careGuide: {
+        label: "Plant care",
+        name: "Care Guide",
+        desc: "Simple tips and essential gestures to keep your Mossä creation alive, thriving, and beautiful over time.",
+        cta: "View guide",
+      },
+      newborns: {
         label: "Birth ritual",
-        name: "The Eternal Birth Bouquet",
-        desc:
-          "A duo of plants symbolising the shared growth between child and parents. A gift that grows, evolves, and flourishes with the rhythm of the family.",
+        name: "Newborns",
+        desc: "A botanical gift to celebrate a new arrival. A gentle, living composition — a symbol of shared growth between child and parents, a keepsake that grows alongside them.",
         cta: "Discover",
       },
+    },
+    tapisUrne: {
+      eyebrow: "Urn Rugs · Made in Québec",
+      title: "Surrounding farewell\nwith living beauty.",
+      subtitle:
+        "Each urn rug is a unique, handcrafted piece. A living, caring alternative — each loved one leaves with a small plant, a symbol of memory and continuity.",
+      cta: "Request a quote",
     },
     careGuide: {
       eyebrow: "Care guide",
@@ -293,7 +363,7 @@ export const copy = {
         "Whether embellishing your home, terrace, or professional space, Mossä brings a creative, expert touch to every project. Each piece is crafted exclusively on order, guaranteeing total personalisation and absolute freshness.",
       quote: "Let nature enter your home, with intention.",
       ctaPrimary: "Contact us",
-      ctaSecondary: "View collection",
+      ctaSecondary: "View gallery",
     },
     footer: {
       tagline: "Nature sculpted for your life's moments.",
@@ -302,8 +372,8 @@ export const copy = {
       rights: "© 2025 Mossä. All rights reserved.",
       links: {
         home: "Home",
-        collection: "Collection",
-        rituels: "Rituals",
+        collection: "Gallery",
+        rituels: "Services",
         aPropos: "About",
         contact: "Contact",
       },

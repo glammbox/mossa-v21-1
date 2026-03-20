@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { useState } from "react";
 import type { Locale } from "@/lib/copy";
 import { copy } from "@/lib/copy";
 
@@ -6,19 +7,68 @@ type CollectionProps = {
   locale: Locale;
 };
 
-const tapisImages = [
-  { src: "/images/tapis/tapis-01-walnut-plants.jpg", altFr: "Tapis d'urne en noyer avec végétaux", altEn: "Walnut urn carpet with botanicals" },
-  { src: "/images/tapis/tapis-02-black-rose-gold.jpg", altFr: "Tapis d'urne noir laqué rose gold", altEn: "Black lacquer urn carpet rose gold" },
-  { src: "/images/tapis/tapis-03-pine-flowers-colorful.jpg", altFr: "Tapis d'urne pin fleurs colorées", altEn: "Pine urn carpet colourful flowers" },
-  { src: "/images/tapis/tapis-04-walnut-crystal-calla.jpg", altFr: "Tapis d'urne noyer crystal arums", altEn: "Walnut crystal calla urn carpet" },
-  { src: "/images/tapis/tapis-05-zen-japanese-orchid.jpg", altFr: "Tapis d'urne zen japonais orchidée", altEn: "Japanese zen orchid urn carpet" },
-  { src: "/images/tapis/tapis-06-marble-gold-ornate.jpg", altFr: "Tapis d'urne marbre or orné", altEn: "Marble ornate gold urn carpet" },
-  { src: "/images/tapis/tapis-07-pine-navy-orchid.jpg", altFr: "Tapis d'urne pin marine orchidées", altEn: "Pine navy orchid urn carpet" },
-  { src: "/images/tapis/tapis-08-walnut-cream-orchid.jpg", altFr: "Tapis d'urne noyer crème orchidées", altEn: "Walnut cream orchid urn carpet" },
+const collectionItems = [
+  {
+    src: "/images/product-1.jpg",
+    nameFr: "Jardin Zen Noir",
+    nameEn: "Black Zen Garden",
+    descFr: "Composition minimaliste sur socle ardoise, mousse et plantes épurées.",
+    descEn: "Minimalist composition on slate base, moss and refined plants.",
+  },
+  {
+    src: "/images/product-2.jpg",
+    nameFr: "Jardin de Céramique",
+    nameEn: "Ceramic Garden",
+    descFr: "Plantes vivantes en coupe céramique, galets et mousse verte.",
+    descEn: "Living plants in ceramic cup, pebbles and green moss.",
+  },
+  {
+    src: "/images/product-3.jpg",
+    nameFr: "Trio Botanical",
+    nameEn: "Botanical Trio",
+    descFr: "Trois plantes complémentaires dans un caisson de bois naturel.",
+    descEn: "Three complementary plants in a natural wood case.",
+  },
+  {
+    src: "/images/product-4.jpg",
+    nameFr: "Zen Suspendu",
+    nameEn: "Suspended Zen",
+    descFr: "Arrangement aérien, mousse et plantes grasses en suspension.",
+    descEn: "Aerial arrangement, moss and succulents in suspension.",
+  },
+  {
+    src: "/images/product-5.jpg",
+    nameFr: "Collection Naturelle",
+    nameEn: "Natural Collection",
+    descFr: "Mélange organique de textures végétales sur plateau de bois.",
+    descEn: "Organic blend of botanical textures on a wooden tray.",
+  },
+  {
+    src: "/images/product-6.jpg",
+    nameFr: "Paysage de Mousse",
+    nameEn: "Moss Landscape",
+    descFr: "Paysage végétal miniature, plantes indigènes et pierres naturelles.",
+    descEn: "Miniature botanical landscape, native plants and natural stones.",
+  },
+  {
+    src: "/images/product-7.jpg",
+    nameFr: "Composition Vivante",
+    nameEn: "Living Composition",
+    descFr: "Plantes vivaces et mousse fraîche dans un contenant design.",
+    descEn: "Perennial plants and fresh moss in a designer container.",
+  },
+  {
+    src: "/images/product-8.jpg",
+    nameFr: "Kusamono Contemporain",
+    nameEn: "Contemporary Kusamono",
+    descFr: "Inspiration japonaise, plantes fines et galets polis à la main.",
+    descEn: "Japanese inspiration, fine plants and hand-polished pebbles.",
+  },
 ];
 
 export function Collection({ locale }: CollectionProps) {
-  const t = copy[locale].collection;
+  const t = copy[locale].gallery;
+  const [hovered, setHovered] = useState<string | null>(null);
 
   return (
     <section
@@ -57,45 +107,56 @@ export function Collection({ locale }: CollectionProps) {
           </div>
         </motion.div>
 
-        {/* Product grid */}
+        {/* Product grid — ALL cards with identical bottom overlay */}
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {tapisImages.map((img, index) => {
-            const item = t.items[index];
+          {collectionItems.map((item, index) => {
+            const isHovered = hovered === item.src;
             return (
               <motion.article
-                key={img.src}
+                key={item.src}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: (index % 4) * 0.07 }}
-                className="group cursor-pointer"
+                className="cursor-pointer relative overflow-hidden"
                 style={{ border: "1px solid var(--border)" }}
+                onMouseEnter={() => setHovered(item.src)}
+                onMouseLeave={() => setHovered(null)}
               >
-                <figure className="overflow-hidden">
+                <figure className="relative overflow-hidden">
                   <img
-                    src={img.src}
-                    alt={locale === "fr" ? img.altFr : img.altEn}
-                    className="aspect-[3/4] w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                    src={item.src}
+                    alt={locale === "fr" ? item.nameFr : item.nameEn}
+                    className="aspect-[3/4] w-full object-cover object-center"
+                    style={{
+                      transform: isHovered ? "scale(1.07)" : "scale(1)",
+                      transition: "transform 0.3s ease",
+                    }}
                     loading="lazy"
                   />
+                  {/* Dark gradient overlay — ALWAYS visible at bottom */}
+                  <div
+                    className="absolute inset-0 flex items-end p-4"
+                    style={{
+                      background:
+                        "linear-gradient(to top, rgba(17,22,26,0.85) 0%, rgba(17,22,26,0.35) 40%, transparent 70%)",
+                    }}
+                  >
+                    <div>
+                      <h3
+                        className="font-serif text-base font-light leading-snug text-white"
+                      >
+                        {locale === "fr" ? item.nameFr : item.nameEn}
+                      </h3>
+                      <p
+                        className="mt-1 text-[10px] leading-relaxed"
+                        style={{ color: "rgba(242,236,226,0.72)" }}
+                      >
+                        {locale === "fr" ? item.descFr : item.descEn}
+                      </p>
+                    </div>
+                  </div>
                 </figure>
-                <div
-                  className="p-4"
-                  style={{ background: "var(--surface)" }}
-                >
-                  <h3
-                    className="font-serif text-xl font-light leading-snug"
-                    style={{ color: "var(--text-primary)" }}
-                  >
-                    {item?.name}
-                  </h3>
-                  <p
-                    className="mt-1.5 text-xs leading-relaxed"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    {item?.desc}
-                  </p>
-                </div>
               </motion.article>
             );
           })}

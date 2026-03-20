@@ -30,8 +30,8 @@ export function About({ locale }: AboutProps) {
               style={{ border: "1px solid var(--border)" }}
             >
               <img
-                src="/images/zen-jardin-product.jpg"
-                alt={locale === "fr" ? "Jardin zen Mossä" : "Mossä zen garden"}
+                src="/images/product-7.jpg"
+                alt={locale === "fr" ? "Création végétale Mossä" : "Mossä botanical creation"}
                 className="aspect-[3/4] w-full object-cover transition-transform duration-700 hover:scale-105"
                 loading="lazy"
               />
@@ -88,23 +88,7 @@ export function About({ locale }: AboutProps) {
               </p>
             </div>
 
-            {/* Style badge */}
-            <div
-              className="mt-8 flex flex-wrap gap-2"
-            >
-              {["Kusamono", "Design Zen", "Sur Commande"].map((tag) => (
-                <span
-                  key={tag}
-                  className="border px-3 py-1 text-[9px] uppercase tracking-[0.22em]"
-                  style={{
-                    borderColor: "var(--border)",
-                    color: "var(--text-muted)",
-                  }}
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
+
           </motion.div>
         </div>
       </div>

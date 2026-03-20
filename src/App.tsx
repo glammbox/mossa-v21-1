@@ -6,7 +6,6 @@ import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { Services } from "@/components/Services";
 import { Collection } from "@/components/Collection";
-import { CareGuideButton } from "@/components/CareGuideButton";
 import { CareGuide } from "@/components/CareGuide";
 import { Engagement } from "@/components/Engagement";
 import { Footer } from "@/components/Footer";
@@ -26,9 +25,8 @@ export default function App() {
       />
       <Hero locale={locale} />
       <About locale={locale} />
-      <Services locale={locale} />
+      <Services locale={locale} onCareGuideOpen={() => setCareOpen(true)} />
       <Collection locale={locale} />
-      <CareGuideButton locale={locale} onOpen={() => setCareOpen(true)} />
       <Engagement locale={locale} />
       <Footer locale={locale} />
 

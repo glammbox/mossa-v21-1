@@ -34,9 +34,10 @@ export function Hero({ locale }: HeroProps) {
       {/* Full-bleed background image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/product-2.jpg"
-          alt="Création végétale Mossä — jardin zen botanique"
-          className="h-full w-full object-cover object-center"
+          src="/images/hero-v6.jpg"
+          alt="Création végétale Mossä — composition zen botanique mousse et pierre"
+          className="h-full w-full object-contain object-center"
+          style={{ backgroundColor: "var(--bg)" }}
           loading="eager"
         />
         {/* Dark overlay for text legibility */}
