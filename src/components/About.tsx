@@ -13,7 +13,7 @@ export function About({ locale }: AboutProps) {
     <section
       id="a-propos"
       className="py-24 md:py-32"
-      style={{ background: "var(--bg-elevated)" }}
+      style={{ background: "var(--bg)" }}
     >
       <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
         <div className="grid gap-12 md:grid-cols-2 md:gap-20">

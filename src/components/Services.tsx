@@ -196,7 +196,7 @@ export function Services({ locale, onCareGuideOpen, onQuoteFormOpen }: ServicesP
       <section
         id="services"
         className="py-24 md:py-32"
-        style={{ background: "var(--bg)" }}
+        style={{ background: "var(--bg-elevated)" }}
       >
         <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
           {/* Header */}
