@@ -32,15 +32,10 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
     <footer
       className="border-t py-16 md:py-20"
       style={{
-        backgroundImage: "url('/images/footer-bg.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        position: "relative",
+        background: "var(--bg)",
         borderColor: "var(--border)",
       }}
     >
-      <div style={{ position: "absolute", inset: 0, background: "rgba(10,9,7,0.82)", zIndex: 0 }} />
-      <div style={{ position: "relative", zIndex: 1 }}>
       <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           {/* Brand column */}
@@ -117,8 +112,9 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
               href="mailto:contact@mossä.com"
               className="inline-flex border px-5 py-3 text-[10px] uppercase tracking-[0.22em] transition-all duration-200 hover:opacity-80"
               style={{
+                background: "var(--accent)",
                 borderColor: "var(--accent)",
-                color: "var(--accent)",
+                color: "#F2ECE2",
               }}
             >
               contact@mossä.com
@@ -128,9 +124,9 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
               onClick={() => onQuoteFormOpen?.()}
               className="mt-3 inline-flex border px-5 py-3 text-[10px] uppercase tracking-[0.22em] transition-all duration-200 hover:opacity-80"
               style={{
+                background: "var(--accent)",
                 borderColor: "var(--accent)",
-                color: "var(--accent)",
-                background: "transparent",
+                color: "#F2ECE2",
               }}
             >
               {locale === "fr" ? "Demander un devis" : "Request a Quote"}
@@ -147,8 +143,9 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
                   href={s.href}
                   className="inline-flex border px-5 py-2.5 text-[10px] uppercase tracking-[0.22em] transition-all duration-200 hover:opacity-80"
                   style={{
+                    background: "var(--accent)",
                     borderColor: "var(--accent)",
-                    color: "var(--accent)",
+                    color: "#F2ECE2",
                   }}
                 >
                   {s.label}
@@ -170,7 +167,6 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
             Créations végétales · Sur commande
           </p>
         </div>
-      </div>
       </div>
     </footer>
   );
