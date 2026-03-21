@@ -71,7 +71,7 @@ export function SiteHeader({
         >
           <span
             className="font-serif text-2xl font-light tracking-widest"
-            style={{ color: "var(--text-primary)" }}
+            style={{ color: scrolled && theme === "light" ? "#2A2A2A" : "#F0EBE1" }}
           >
             Mossä
           </span>
@@ -85,12 +85,12 @@ export function SiteHeader({
               type="button"
               onClick={() => handleNav(item.href)}
               className="text-[11px] uppercase tracking-[0.24em] transition-colors duration-200"
-              style={{ color: theme === "light" ? "var(--text-primary)" : "var(--text-muted)" }}
+              style={{ color: scrolled && theme === "light" ? "#2A2A2A" : "#F0EBE1" }}
               onMouseEnter={(e) =>
-                ((e.target as HTMLElement).style.color = "var(--text-primary)")
+                ((e.target as HTMLElement).style.color = scrolled && theme === "light" ? "#1A1A1A" : "#FFFFFF")
               }
               onMouseLeave={(e) =>
-                ((e.target as HTMLElement).style.color = theme === "light" ? "var(--text-primary)" : "var(--text-muted)")
+                ((e.target as HTMLElement).style.color = scrolled && theme === "light" ? "#2A2A2A" : "#F0EBE1")
               }
             >
               {item.label}
@@ -148,7 +148,7 @@ export function SiteHeader({
             className="inline-flex items-center justify-center p-1 md:hidden"
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
-            style={{ color: "var(--text-primary)" }}
+            style={{ color: scrolled && theme === "light" ? "#2A2A2A" : "#F0EBE1" }}
           >
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>
