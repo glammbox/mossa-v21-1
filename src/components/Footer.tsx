@@ -144,7 +144,7 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
                 style={{
                   background: "var(--accent)",
                   borderColor: "var(--accent)",
-                  color: "#F2ECE2",
+                  color: "#0A0B09",
                 }}
               >
                 contact@mossä.com
@@ -156,7 +156,7 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
                 style={{
                   background: "var(--accent)",
                   borderColor: "var(--accent)",
-                  color: "#F2ECE2",
+                  color: "#0A0B09",
                 }}
               >
                 {locale === "fr" ? "Demander un devis" : "Request a Quote"}
@@ -175,7 +175,7 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
                     style={{
                       background: "var(--accent)",
                       borderColor: "var(--accent)",
-                      color: "#F2ECE2",
+                      color: "#0A0B09",
                     }}
                   >
                     {s.label}
