@@ -71,8 +71,8 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
             {/* Brand column */}
             <div>
               <p
-                className="font-serif text-2xl font-light tracking-widest mb-1"
-                style={{ color: "var(--text-primary)" }}
+                className="font-serif text-5xl font-light tracking-widest mb-1"
+                style={{ color: "#F2ECE2" }}
               >
                 Mossä
               </p>

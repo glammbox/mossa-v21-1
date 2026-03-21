@@ -85,12 +85,12 @@ export function SiteHeader({
               type="button"
               onClick={() => handleNav(item.href)}
               className="text-[11px] uppercase tracking-[0.24em] transition-colors duration-200"
-              style={{ color: "var(--text-muted)" }}
+              style={{ color: theme === "light" ? "var(--text-primary)" : "var(--text-muted)" }}
               onMouseEnter={(e) =>
                 ((e.target as HTMLElement).style.color = "var(--text-primary)")
               }
               onMouseLeave={(e) =>
-                ((e.target as HTMLElement).style.color = "var(--text-muted)")
+                ((e.target as HTMLElement).style.color = theme === "light" ? "var(--text-primary)" : "var(--text-muted)")
               }
             >
               {item.label}
@@ -176,7 +176,7 @@ export function SiteHeader({
                   type="button"
                   onClick={() => handleNav(item.href)}
                   className="text-left text-[11px] uppercase tracking-[0.24em] transition-colors duration-200"
-                  style={{ color: "var(--text-secondary)" }}
+                  style={{ color: theme === "light" ? "var(--text-primary)" : "var(--text-secondary)" }}
                 >
                   {item.label}
                 </button>
