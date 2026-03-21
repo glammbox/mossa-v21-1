@@ -30,7 +30,7 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
 
   return (
     <footer
-      className="border-t py-16 md:py-20"
+      className="border-t py-12 md:py-16"
       style={{
         background: "var(--bg)",
         borderColor: "var(--border)",
