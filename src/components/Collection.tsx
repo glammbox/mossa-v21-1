@@ -108,7 +108,7 @@ export function Collection({ locale }: CollectionProps) {
         </motion.div>
 
         {/* Product grid — ALL cards with identical bottom overlay */}
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {collectionItems.map((item, index) => {
             const isHovered = hovered === item.src;
             return (

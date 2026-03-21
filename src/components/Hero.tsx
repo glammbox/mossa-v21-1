@@ -31,6 +31,35 @@ export function Hero({ locale }: HeroProps) {
       className="relative isolate min-h-screen overflow-hidden"
       style={{ background: "var(--bg)" }}
     >
+      {/* Video background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        src="/video/hero.mp4"
+        poster="/images/hero.jpg"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: 0,
+        }}
+      />
+      {/* Dark overlay */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: "rgba(0,0,0,0.45)",
+          zIndex: 1,
+        }}
+      />
+      {/* Existing content */}
+      <div style={{ position: "relative", zIndex: 2 }}>
       {/* Full-bleed background image */}
       <div className="absolute inset-0 z-0">
         <img
@@ -124,6 +153,7 @@ export function Hero({ locale }: HeroProps) {
           />
         </motion.div>
       </div>
+      </div>{/* end existing content wrapper */}
     </section>
   );
 }

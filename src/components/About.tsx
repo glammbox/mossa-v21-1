@@ -32,7 +32,7 @@ export function About({ locale }: AboutProps) {
               <img
                 src="/images/product-7.jpg"
                 alt={locale === "fr" ? "Création végétale Mossä" : "Mossä botanical creation"}
-                className="aspect-[3/4] w-full object-cover transition-transform duration-700 hover:scale-105"
+                className="aspect-[3/4] w-full object-cover"
                 loading="lazy"
               />
             </div>

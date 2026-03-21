@@ -7,6 +7,7 @@ import type { LightboxImage } from "@/components/Lightbox";
 
 type ServicesProps = {
   locale: Locale;
+  onQuoteFormOpen?: () => void;
 };
 
 // ── Lightbox image sets ──────────────────────────────────────────────────────
@@ -85,7 +86,7 @@ function MemorialContent({ locale, tapisUrne }: { locale: Locale; tapisUrne: { e
             <img
               src={img.src}
               alt={locale === "fr" ? img.altFr : img.altEn}
-              className="aspect-[3/4] w-full object-cover transition-transform duration-500 hover:scale-105"
+              className="aspect-[3/4] w-full object-cover"
               loading="lazy"
             />
             <div
@@ -100,27 +101,14 @@ function MemorialContent({ locale, tapisUrne }: { locale: Locale; tapisUrne: { e
         ))}
       </div>
 
-      {/* CTA */}
-      <div className="text-center md:text-left">
-        <a
-          href="mailto:bonjour@mossa.ca"
-          className="inline-flex items-center border px-7 py-4 text-[10px] uppercase tracking-[0.3em] transition-all duration-200 hover:opacity-85"
-          style={{
-            background: "var(--accent)",
-            borderColor: "var(--accent)",
-            color: "var(--bg)",
-          }}
-        >
-          {tapisUrne.cta}
-        </a>
-      </div>
+      {/* CTA handled by Lightbox action bar — no button here */}
     </div>
   );
 }
 
 // ── Component ────────────────────────────────────────────────────────────────
 
-export function Services({ locale, onCareGuideOpen }: ServicesProps & { onCareGuideOpen: () => void }) {
+export function Services({ locale, onCareGuideOpen, onQuoteFormOpen }: ServicesProps & { onCareGuideOpen: () => void }) {
   const t = copy[locale].rituels;
   const tapisUrne = copy[locale].tapisUrne;
 
@@ -161,7 +149,7 @@ export function Services({ locale, onCareGuideOpen }: ServicesProps & { onCareGu
     },
     {
       id: "careGuide",
-      image: "/images/care-sheet.jpg",
+      image: "/images/inbound/inbound-03.jpg",
       label: t.careGuide.label,
       name: t.careGuide.name,
       desc: t.careGuide.desc,
@@ -249,11 +237,12 @@ export function Services({ locale, onCareGuideOpen }: ServicesProps & { onCareGu
                 }}
               >
                 {/* Card image */}
-                <div className="overflow-hidden" style={{ height: "200px" }}>
+                <div className="overflow-hidden aspect-[16/9]">
                   <img
                     src={card.image}
                     alt={card.name}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="h-full w-full object-cover"
+                    style={{ objectPosition: "center 30%" }}
                     loading="lazy"
                   />
                 </div>
@@ -305,6 +294,7 @@ export function Services({ locale, onCareGuideOpen }: ServicesProps & { onCareGu
           title={getLightboxTitle(id)}
           locale={locale}
           images={getLightboxImages(id)}
+          onQuoteFormOpen={onQuoteFormOpen}
         />
       ))}
 
@@ -315,6 +305,7 @@ export function Services({ locale, onCareGuideOpen }: ServicesProps & { onCareGu
         title={getLightboxTitle("tapis")}
         locale={locale}
         content={<MemorialContent locale={locale} tapisUrne={tapisUrne} />}
+        onQuoteFormOpen={onQuoteFormOpen}
       />
     </>
   );

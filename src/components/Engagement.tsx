@@ -4,9 +4,10 @@ import { copy } from "@/lib/copy";
 
 type EngagementProps = {
   locale: Locale;
+  onQuoteFormOpen?: () => void;
 };
 
-export function Engagement({ locale }: EngagementProps) {
+export function Engagement({ locale, onQuoteFormOpen }: EngagementProps) {
   const t = copy[locale].engagement;
 
   return (
@@ -98,39 +99,17 @@ export function Engagement({ locale }: EngagementProps) {
             </blockquote>
 
             <div className="flex flex-wrap gap-4">
-              <a
-                href="mailto:bonjour@mossa.ca"
-                className="inline-flex items-center border px-6 py-3.5 text-[10px] uppercase tracking-[0.25em] transition-all duration-200"
-                style={{
-                  background: "var(--accent)",
-                  borderColor: "var(--accent)",
-                  color: "var(--bg)",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.opacity = "0.85";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.opacity = "1";
-                }}
-              >
-                {t.ctaPrimary}
-              </a>
               <button
                 type="button"
-                className="inline-flex items-center border px-6 py-3.5 text-[10px] uppercase tracking-[0.25em] transition-all duration-200 hover:opacity-80"
+                onClick={() => onQuoteFormOpen?.()}
+                className="px-8 py-3 text-[11px] uppercase tracking-[0.2em] font-medium transition-opacity hover:opacity-80"
                 style={{
-                  borderColor: "var(--border)",
-                  color: "var(--text-secondary)",
-                }}
-                onClick={() => {
-                  const el = document.getElementById("collection");
-                  if (el) {
-                    const y = el.getBoundingClientRect().top + window.scrollY - 88;
-                    window.scrollTo({ top: y, behavior: "smooth" });
-                  }
+                  background: "var(--accent)",
+                  color: "var(--bg)",
+                  border: "none",
                 }}
               >
-                {t.ctaSecondary}
+                {locale === "fr" ? "Demander un devis" : "Request a Quote"}
               </button>
             </div>
           </motion.div>

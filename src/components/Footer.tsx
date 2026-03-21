@@ -3,16 +3,18 @@ import { copy } from "@/lib/copy";
 
 type FooterProps = {
   locale: Locale;
+  onQuoteFormOpen?: () => void;
 };
 
-export function Footer({ locale }: FooterProps) {
+export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
   const t = copy[locale].footer;
 
   const navLinks = [
     { id: "hero", label: t.links.home },
-    { id: "collection", label: t.links.collection },
-    { id: "rituels", label: t.links.rituels },
     { id: "a-propos", label: t.links.aPropos },
+    { id: "services", label: t.links.rituels },
+    { id: "collection", label: t.links.collection },
+    { id: "livres", label: locale === "fr" ? "Boutique" : "Boutique" },
     { id: "engagement", label: t.links.contact },
   ];
 
@@ -30,51 +32,53 @@ export function Footer({ locale }: FooterProps) {
     <footer
       className="border-t py-16 md:py-20"
       style={{
-        background: "var(--surface)",
+        backgroundImage: "url('/images/footer-bg.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        position: "relative",
         borderColor: "var(--border)",
       }}
     >
+      <div style={{ position: "absolute", inset: 0, background: "rgba(10,9,7,0.82)", zIndex: 0 }} />
+      <div style={{ position: "relative", zIndex: 1 }}>
       <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           {/* Brand column */}
           <div>
-            {/* Animated logo video */}
-            <div className="mb-5 overflow-hidden" style={{ width: "96px" }}>
-              <video
-                src="/media/mossa-logo-animated.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                aria-hidden="true"
-                style={{
-                  width: "96px",
-                  opacity: 0.8,
-                  display: "block",
-                }}
-              />
-            </div>
             <p
-              className="font-serif text-2xl font-light tracking-widest mb-3"
+              className="font-serif text-2xl font-light tracking-widest mb-1"
               style={{ color: "var(--text-primary)" }}
             >
               Mossä
             </p>
             <p
-              className="text-[10px] uppercase tracking-[0.28em] mb-4"
+              className="text-[10px] uppercase tracking-[0.28em] mb-2"
               style={{ color: "var(--accent)" }}
             >
               {t.tagline}
             </p>
+            <p
+              className="text-sm italic mb-4"
+              style={{ color: "var(--text-muted)" }}
+            >
+              Stéphanie De Cesare
+            </p>
             <p className="text-sm" style={{ color: "var(--text-muted)" }}>
-              Montréal, Québec
+              Centre du Québec
             </p>
             <a
-              href="mailto:bonjour@mossa.ca"
+              href="mailto:contact@mossä.com"
               className="mt-1 block text-sm transition-opacity hover:opacity-70"
               style={{ color: "var(--text-muted)" }}
             >
-              bonjour@mossa.ca
+              contact@mossä.com
+            </a>
+            <a
+              href="tel:8198162816"
+              className="mt-1 block text-sm transition-opacity hover:opacity-70"
+              style={{ color: "var(--text-muted)" }}
+            >
+              819-816-2816
             </a>
           </div>
 
@@ -110,27 +114,46 @@ export function Footer({ locale }: FooterProps) {
               {t.contact}
             </p>
             <a
-              href="mailto:bonjour@mossa.ca"
+              href="mailto:contact@mossä.com"
               className="inline-flex border px-5 py-3 text-[10px] uppercase tracking-[0.22em] transition-all duration-200 hover:opacity-80"
               style={{
                 borderColor: "var(--accent)",
                 color: "var(--accent)",
               }}
             >
-              bonjour@mossa.ca
+              contact@mossä.com
             </a>
+            <button
+              type="button"
+              onClick={() => onQuoteFormOpen?.()}
+              className="mt-3 inline-flex border px-5 py-3 text-[10px] uppercase tracking-[0.22em] transition-all duration-200 hover:opacity-80"
+              style={{
+                borderColor: "var(--accent)",
+                color: "var(--accent)",
+                background: "transparent",
+              }}
+            >
+              {locale === "fr" ? "Demander un devis" : "Request a Quote"}
+            </button>
             {/* Social links */}
-            <div className="mt-6 flex gap-4">
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[10px] uppercase tracking-[0.2em] transition-opacity hover:opacity-70"
-                style={{ color: "var(--text-muted)" }}
-                aria-label="Instagram"
-              >
-                Instagram
-              </a>
+            <div className="mt-6 flex flex-col gap-3">
+              {[
+                { label: "Instagram", href: "#" },
+                { label: "TikTok", href: "#" },
+                { label: "Facebook", href: "#" },
+              ].map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  className="inline-flex border px-5 py-2.5 text-[10px] uppercase tracking-[0.22em] transition-all duration-200 hover:opacity-80"
+                  style={{
+                    borderColor: "var(--accent)",
+                    color: "var(--accent)",
+                  }}
+                >
+                  {s.label}
+                </a>
+              ))}
             </div>
           </div>
         </div>
@@ -147,6 +170,7 @@ export function Footer({ locale }: FooterProps) {
             Créations végétales · Sur commande
           </p>
         </div>
+      </div>
       </div>
     </footer>
   );

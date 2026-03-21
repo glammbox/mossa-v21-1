@@ -9,11 +9,14 @@ import { Collection } from "@/components/Collection";
 import { CareGuide } from "@/components/CareGuide";
 import { Engagement } from "@/components/Engagement";
 import { Footer } from "@/components/Footer";
+import { QuoteFormModal } from "@/components/QuoteFormModal";
+import { CareBooks } from "@/components/CareBooks";
 
 export default function App() {
   const [theme, toggleTheme] = useTheme();
   const [locale, toggleLocale] = useLanguage("fr");
   const [careOpen, setCareOpen] = useState(false);
+  const [quoteFormOpen, setQuoteFormOpen] = useState(false);
 
   return (
     <div style={{ background: "var(--bg)", color: "var(--text-primary)" }}>
@@ -25,10 +28,18 @@ export default function App() {
       />
       <Hero locale={locale} />
       <About locale={locale} />
-      <Services locale={locale} onCareGuideOpen={() => setCareOpen(true)} />
+      <Services locale={locale} onCareGuideOpen={() => setCareOpen(true)} onQuoteFormOpen={() => setQuoteFormOpen(true)} />
       <Collection locale={locale} />
-      <Engagement locale={locale} />
-      <Footer locale={locale} />
+      <CareBooks locale={locale} />
+      <Engagement locale={locale} onQuoteFormOpen={() => setQuoteFormOpen(true)} />
+      <Footer locale={locale} onQuoteFormOpen={() => setQuoteFormOpen(true)} />
+
+      {/* QuoteFormModal */}
+      <QuoteFormModal
+        isOpen={quoteFormOpen}
+        onClose={() => setQuoteFormOpen(false)}
+        locale={locale}
+      />
 
       {/* CareGuide modal overlay */}
       {careOpen && (
