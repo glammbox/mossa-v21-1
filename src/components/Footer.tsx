@@ -33,7 +33,7 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
       className="border-t py-12 md:py-16"
       style={{
         background: "var(--bg)",
-        borderColor: "var(--border)",
+        borderColor: "rgba(240,235,225,0.15)",
         position: "relative",
         overflow: "hidden",
       }}
@@ -60,7 +60,7 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
         style={{
           position: "absolute",
           inset: 0,
-          background: "rgba(10,11,9,0.75)",
+          background: "rgba(10,11,9,0.80)",
           zIndex: 1,
         }}
       />
@@ -71,37 +71,37 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
             {/* Brand column */}
             <div>
               <p
-                className="font-serif text-5xl font-light tracking-widest mb-1"
-                style={{ color: "#F2ECE2" }}
+                className="font-serif text-5xl tracking-widest mb-1"
+                style={{ color: "#FFFFFF", fontWeight: 700 }}
               >
                 Mossä
               </p>
               <p
-                className="text-[10px] uppercase tracking-[0.28em] mb-2"
-                style={{ color: "var(--accent)" }}
+                className="text-lg italic mb-4"
+                style={{ color: "#F0EBE1", fontWeight: 400 }}
               >
                 {t.tagline}
               </p>
               <p
-                className="text-sm italic mb-4"
-                style={{ color: "var(--text-muted)" }}
+                className="text-sm italic mb-1"
+                style={{ color: "#F0EBE1" }}
               >
                 Stéphanie De Cesare
               </p>
-              <p className="text-sm" style={{ color: "var(--text-muted)" }}>
+              <p className="text-sm mb-1" style={{ color: "#F0EBE1" }}>
                 Centre du Québec
               </p>
               <a
                 href="mailto:contact@mossä.com"
                 className="mt-1 block text-sm transition-opacity hover:opacity-70"
-                style={{ color: "var(--text-muted)" }}
+                style={{ color: "#F0EBE1" }}
               >
                 contact@mossä.com
               </a>
               <a
                 href="tel:8198162816"
                 className="mt-1 block text-sm transition-opacity hover:opacity-70"
-                style={{ color: "var(--text-muted)" }}
+                style={{ color: "#F0EBE1" }}
               >
                 819-816-2816
               </a>
@@ -111,7 +111,7 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
             <nav>
               <p
                 className="mb-4 text-[10px] uppercase tracking-[0.28em]"
-                style={{ color: "var(--text-muted)" }}
+                style={{ color: "#9E7B45" }}
               >
                 {t.nav}
               </p>
@@ -122,7 +122,7 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
                     type="button"
                     onClick={() => scrollTo(link.id)}
                     className="text-left text-sm transition-opacity hover:opacity-70"
-                    style={{ color: "var(--text-secondary)" }}
+                    style={{ color: "#F0EBE1", fontWeight: 500 }}
                   >
                     {link.label}
                   </button>
@@ -134,7 +134,7 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
             <div>
               <p
                 className="mb-4 text-[10px] uppercase tracking-[0.28em]"
-                style={{ color: "var(--text-muted)" }}
+                style={{ color: "#9E7B45" }}
               >
                 {t.contact}
               </p>
@@ -142,8 +142,8 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
                 href="mailto:contact@mossä.com"
                 className="inline-flex border px-5 py-3 text-[10px] uppercase tracking-[0.22em] transition-all duration-200 hover:opacity-80"
                 style={{
-                  background: "var(--accent)",
-                  borderColor: "var(--accent)",
+                  background: "#9E7B45",
+                  borderColor: "#9E7B45",
                   color: "#0A0B09",
                 }}
               >
@@ -154,8 +154,8 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
                 onClick={() => onQuoteFormOpen?.()}
                 className="mt-3 inline-flex border px-5 py-3 text-[10px] uppercase tracking-[0.22em] transition-all duration-200 hover:opacity-80"
                 style={{
-                  background: "var(--accent)",
-                  borderColor: "var(--accent)",
+                  background: "#9E7B45",
+                  borderColor: "#9E7B45",
                   color: "#0A0B09",
                 }}
               >
@@ -173,8 +173,8 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
                     href={s.href}
                     className="inline-flex border px-5 py-2.5 text-[10px] uppercase tracking-[0.22em] transition-all duration-200 hover:opacity-80"
                     style={{
-                      background: "var(--accent)",
-                      borderColor: "var(--accent)",
+                      background: "#9E7B45",
+                      borderColor: "#9E7B45",
                       color: "#0A0B09",
                     }}
                   >
@@ -188,12 +188,12 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
           {/* Bottom bar */}
           <div
             className="mt-14 flex flex-col items-start justify-between gap-4 border-t pt-6 md:flex-row md:items-center"
-            style={{ borderColor: "var(--border)" }}
+            style={{ borderColor: "rgba(240,235,225,0.15)" }}
           >
-            <p className="text-xs" style={{ color: "var(--text-muted)" }}>
+            <p className="text-xs" style={{ color: "#F0EBE1" }}>
               {t.rights}
             </p>
-            <p className="text-xs" style={{ color: "var(--text-muted)" }}>
+            <p className="text-xs" style={{ color: "#F0EBE1" }}>
               Créations végétales · Sur commande
             </p>
           </div>
