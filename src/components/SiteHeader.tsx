@@ -35,6 +35,7 @@ export function SiteHeader({
     { href: "#a-propos", label: t.aPropos },
     { href: "#services", label: t.rituels },
     { href: "#collection", label: t.collection },
+    { href: "#entretiens", label: t.entretiens },
     { href: "#livres", label: t.livres },
     { href: "#engagement", label: t.engagement },
   ];

@@ -14,6 +14,7 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
     { id: "a-propos", label: t.links.aPropos },
     { id: "services", label: t.links.rituels },
     { id: "collection", label: t.links.collection },
+    { id: "entretiens", label: t.links.entretiens },
     { id: "livres", label: locale === "fr" ? "Boutique" : "Boutique" },
     { id: "engagement", label: t.links.contact },
   ];
