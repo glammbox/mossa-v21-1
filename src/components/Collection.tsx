@@ -69,6 +69,7 @@ const collectionItems = [
 export function Collection({ locale }: CollectionProps) {
   const t = copy[locale].gallery;
   const [hovered, setHovered] = useState<string | null>(null);
+  const [expanded, setExpanded] = useState<string | null>(null);
 
   return (
     <section
@@ -119,9 +120,10 @@ export function Collection({ locale }: CollectionProps) {
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: (index % 4) * 0.07 }}
                 className="cursor-pointer relative overflow-hidden"
-                style={{ border: "1px solid var(--border)" }}
+                style={{ border: "1px solid var(--border)", cursor: "pointer" }}
                 onMouseEnter={() => setHovered(item.src)}
                 onMouseLeave={() => setHovered(null)}
+                onClick={() => setExpanded(expanded === item.src ? null : item.src)}
               >
                 <figure className="relative overflow-hidden">
                   <img

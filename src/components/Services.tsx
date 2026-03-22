@@ -209,9 +209,9 @@ export function Services({ locale, onQuoteFormOpen }: ServicesProps) {
             </h2>
           </motion.div>
 
-          {/* 6-card grid */}
+          {/* Top 3 cards — portrait, 3-column grid */}
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {cards.map((card, i) => (
+            {cards.slice(0, 3).map((card, i) => (
               <motion.div
                 key={card.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -226,8 +226,8 @@ export function Services({ locale, onQuoteFormOpen }: ServicesProps) {
                 }}
                 onClick={() => handleCardClick(card.id)}
               >
-                {/* Card image */}
-                <div className="overflow-hidden aspect-[16/9]">
+                {/* Card image — portrait */}
+                <div className="overflow-hidden aspect-[4/5]">
                   <img
                     src={card.image}
                     alt={card.name}
@@ -257,17 +257,56 @@ export function Services({ locale, onQuoteFormOpen }: ServicesProps) {
                   >
                     {card.desc}
                   </p>
-                  <button
-                    type="button"
-                    onClick={() => handleCardClick(card.id)}
-                    className="mt-5 inline-flex items-center gap-2 border-b pb-0.5 text-[10px] uppercase tracking-[0.22em] transition-all duration-200 self-start hover:gap-3"
-                    style={{
-                      borderColor: "var(--accent)",
-                      color: "var(--accent)",
-                    }}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Bottom 2 cards — landscape horizontal, bg image + text overlay */}
+          <div className="grid gap-6 mt-6 grid-cols-1 sm:grid-cols-2">
+            {cards.slice(3).map((card, i) => (
+              <motion.div
+                key={card.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.7, ease: "easeOut", delay: i * 0.07 }}
+                className="group relative overflow-hidden"
+                style={{
+                  backgroundImage: `url(${card.image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center 30%",
+                  height: "200px",
+                  border: "1px solid var(--border)",
+                  cursor: "pointer",
+                }}
+                onClick={() => handleCardClick(card.id)}
+              >
+                {/* Gradient overlay */}
+                <div
+                  className="absolute inset-0 flex flex-col justify-end p-6"
+                  style={{
+                    background:
+                      "linear-gradient(to top, rgba(10,13,16,0.88) 0%, rgba(10,13,16,0.40) 55%, transparent 100%)",
+                  }}
+                >
+                  <span
+                    className="mb-1 text-[9px] uppercase tracking-[0.3em]"
+                    style={{ color: "var(--accent)" }}
                   >
-                    {card.cta} →
-                  </button>
+                    {card.label}
+                  </span>
+                  <h3
+                    className="font-serif text-xl font-light leading-tight text-white"
+                  >
+                    {card.name}
+                  </h3>
+                  <p
+                    className="mt-1 text-sm leading-relaxed line-clamp-1"
+                    style={{ color: "rgba(242,236,226,0.72)" }}
+                  >
+                    {card.desc}
+                  </p>
                 </div>
               </motion.div>
             ))}
