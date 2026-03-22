@@ -56,7 +56,7 @@ const NEWBORN_IMAGES: LightboxImage[] = [
 
 // ── Service card definitions ─────────────────────────────────────────────────
 
-type ServiceCardId = "botanical" | "hotels" | "architecture" | "tapis" | "careGuide" | "newborns";
+type ServiceCardId = "botanical" | "hotels" | "architecture" | "tapis" | "newborns";
 
 // ── Memorial Ritual lightbox content ────────────────────────────────────────
 
@@ -108,7 +108,7 @@ function MemorialContent({ locale, tapisUrne }: { locale: Locale; tapisUrne: { e
 
 // ── Component ────────────────────────────────────────────────────────────────
 
-export function Services({ locale, onCareGuideOpen, onQuoteFormOpen }: ServicesProps & { onCareGuideOpen: () => void }) {
+export function Services({ locale, onQuoteFormOpen }: ServicesProps) {
   const t = copy[locale].rituels;
   const tapisUrne = copy[locale].tapisUrne;
 
@@ -148,14 +148,6 @@ export function Services({ locale, onCareGuideOpen, onQuoteFormOpen }: ServicesP
       cta: t.tapis.cta,
     },
     {
-      id: "careGuide",
-      image: "/images/inbound/inbound-03.jpg",
-      label: t.careGuide.label,
-      name: t.careGuide.name,
-      desc: t.careGuide.desc,
-      cta: t.careGuide.cta,
-    },
-    {
       id: "newborns",
       image: "/images/inbound/inbound-12.jpg",
       label: t.newborns.label,
@@ -166,11 +158,7 @@ export function Services({ locale, onCareGuideOpen, onQuoteFormOpen }: ServicesP
   ];
 
   function handleCardClick(id: ServiceCardId) {
-    if (id === "careGuide") {
-      onCareGuideOpen();
-    } else {
-      setOpenLightbox(id);
-    }
+    setOpenLightbox(id);
   }
 
   // Lightbox title resolver
@@ -234,7 +222,9 @@ export function Services({ locale, onCareGuideOpen, onQuoteFormOpen }: ServicesP
                 style={{
                   background: "var(--surface)",
                   border: "1px solid var(--border)",
+                  cursor: "pointer",
                 }}
+                onClick={() => handleCardClick(card.id)}
               >
                 {/* Card image */}
                 <div className="overflow-hidden aspect-[16/9]">
@@ -286,7 +276,7 @@ export function Services({ locale, onCareGuideOpen, onQuoteFormOpen }: ServicesP
       </section>
 
       {/* Lightboxes */}
-      {(["botanical", "hotels", "architecture", "newborns"] as ServiceCardId[]).map((id) => (
+      {(["botanical", "hotels", "architecture", "newborns"] as const).map((id) => (
         <Lightbox
           key={id}
           isOpen={openLightbox === id}
