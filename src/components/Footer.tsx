@@ -72,13 +72,13 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
             <div>
               <p
                 className="font-serif text-5xl tracking-widest mb-1"
-                style={{ color: "#FFFFFF", fontWeight: 700, textAlign: 'center' }}
+                style={{ color: "#FFFFFF", fontWeight: 700, textAlign: 'left' }}
               >
                 Mossä
               </p>
               <p
                 className="text-lg italic mb-4"
-                style={{ color: "#F0EBE1", fontWeight: 400, textAlign: 'center' }}
+                style={{ color: "#F0EBE1", fontWeight: 400, textAlign: 'left' }}
               >
                 {t.tagline}
               </p>
