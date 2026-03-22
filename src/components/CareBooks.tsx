@@ -886,16 +886,14 @@ export function CareBooks({ locale }: CareBooksProps) {
                   >
                     {isFr ? cat.labelFr : cat.labelEn}
                   </span>
-                  <span
-                    className="mt-2 text-[9px] uppercase tracking-[0.25em] transition-all duration-200"
-                    style={{
-                      color: isOpen ? "var(--accent)" : "rgba(255,255,255,0.6)",
-                    }}
-                  >
-                    {isOpen
-                      ? isFr ? "Ouvert ↑" : "Open ↑"
-                      : isFr ? "Voir →" : "View →"}
-                  </span>
+                  {isOpen && (
+                    <span
+                      className="mt-2 text-[9px] uppercase tracking-[0.25em] transition-all duration-200"
+                      style={{ color: "var(--accent)" }}
+                    >
+                      {isFr ? "Ouvert ↑" : "Open ↑"}
+                    </span>
+                  )}
                 </div>
               </motion.button>
             );

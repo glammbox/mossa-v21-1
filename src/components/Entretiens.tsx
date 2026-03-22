@@ -8,21 +8,18 @@ type EntretiensProps = {
 
 const CARE_ITEMS = [
   {
-    icon: "💧",
     titleFr: "Arrosage & Humidité",
     titleEn: "Watering & Humidity",
     descFr: "Un brumisateur léger deux fois par semaine suffit à maintenir la fraîcheur de la mousse et des végétaux stabilisés.",
     descEn: "A light mist twice a week is enough to keep moss and stabilized botanicals fresh.",
   },
   {
-    icon: "☀️",
     titleFr: "Lumière Indirecte",
     titleEn: "Indirect Light",
     descFr: "Évitez l'exposition directe au soleil. Une lumière douce et diffuse préserve les couleurs et la texture naturelle.",
     descEn: "Avoid direct sunlight. Soft, diffused light preserves natural colours and texture.",
   },
   {
-    icon: "🌿",
     titleFr: "Durabilité & Saisons",
     titleEn: "Longevity & Seasons",
     descFr: "Nos compositions stabilisées durent plusieurs années sans entretien intensif — simplement un environnement stable et sans poussière.",
@@ -37,7 +34,7 @@ export function Entretiens({ locale, onCareGuideOpen }: EntretiensProps) {
     <section
       id="entretiens"
       className="py-20"
-      style={{ background: "#E8E4DE" }}
+      style={{ background: "#C8C2B8" }}
     >
       <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
 
@@ -99,7 +96,6 @@ export function Entretiens({ locale, onCareGuideOpen }: EntretiensProps) {
                 border: "1px solid rgba(42, 42, 42, 0.10)",
               }}
             >
-              <div className="mb-4 text-3xl">{item.icon}</div>
               <h3
                 className="mb-3 font-serif text-lg font-light"
                 style={{ color: "#2A2A2A" }}

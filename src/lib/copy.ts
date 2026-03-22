@@ -76,7 +76,7 @@ export const copy = {
       tapis: {
         label: "Rituel funéraire",
         name: "Rituel Funéraire",
-        desc: "Une alternative vivante et solidaire pour les rituels funéraires. La nature entoure le départ avec dignité — chaque proche repart avec une plante, symbole de continuité et de mémoire verte.",
+        desc: "Des compositions végétales vivantes et symboles de vie pour accompagner les moments de deuil avec dignité et sérénité. Arrangements sur mesure pour cérémonies, commémorations et espaces de recueillement.",
         cta: "Découvrir",
       },
       careGuide: {
@@ -88,7 +88,7 @@ export const copy = {
       newborns: {
         label: "Rituel de naissance",
         name: "Nouveau-Nés",
-        desc: "Un cadeau végétal pour célébrer l'arrivée d'un enfant. Une composition délicate, symbole de croissance partagée entre l'enfant et ses parents — une création qui grandit avec lui, saison après saison.",
+        desc: "Célébrez l'arrivée d'un nouveau-né avec une composition végétale durable, symbole de croissance et d'avenir. Un cadeau unique qui traverse les années.",
         cta: "Découvrir",
       },
     },
@@ -269,7 +269,7 @@ export const copy = {
       tapis: {
         label: "Memorial ritual",
         name: "Memorial Ritual",
-        desc: "A living and compassionate alternative for memorial rituals. Nature surrounds the farewell — each loved one takes home a plant as a symbol of continuity.",
+        desc: "Living botanical compositions as symbols of life to accompany moments of mourning with dignity and serenity. Custom arrangements for ceremonies, commemorations and spaces of reflection.",
         cta: "Discover",
       },
       careGuide: {
@@ -281,7 +281,7 @@ export const copy = {
       newborns: {
         label: "Birth ritual",
         name: "Newborns",
-        desc: "A botanical gift to celebrate a new arrival. A gentle, living composition — a symbol of shared growth between child and parents, a keepsake that grows alongside them.",
+        desc: "Celebrate the arrival of a newborn with a lasting botanical composition, a symbol of growth and future. A unique gift that transcends the years.",
         cta: "Discover",
       },
     },
