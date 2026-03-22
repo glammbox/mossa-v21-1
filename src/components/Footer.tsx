@@ -30,7 +30,7 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
 
   return (
     <footer
-      className="border-t py-12 md:py-16"
+      className="border-t py-10 md:py-12"
       style={{
         background: "var(--bg)",
         borderColor: "rgba(240,235,225,0.15)",
@@ -72,13 +72,13 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
             <div>
               <p
                 className="font-serif text-5xl tracking-widest mb-1"
-                style={{ color: "#FFFFFF", fontWeight: 700 }}
+                style={{ color: "#FFFFFF", fontWeight: 700, textAlign: 'center' }}
               >
                 Mossä
               </p>
               <p
                 className="text-lg italic mb-4"
-                style={{ color: "#F0EBE1", fontWeight: 400 }}
+                style={{ color: "#F0EBE1", fontWeight: 400, textAlign: 'center' }}
               >
                 {t.tagline}
               </p>
@@ -142,8 +142,8 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
                 href="mailto:contact@mossä.com"
                 className="inline-flex border px-5 py-3 text-[10px] uppercase tracking-[0.22em] transition-all duration-200 hover:opacity-80"
                 style={{
-                  background: "#9E7B45",
-                  borderColor: "#9E7B45",
+                  background: "#5A6458",
+                  borderColor: "#5A6458",
                   color: "#0A0B09",
                 }}
               >
@@ -154,8 +154,8 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
                 onClick={() => onQuoteFormOpen?.()}
                 className="mt-3 inline-flex border px-5 py-3 text-[10px] uppercase tracking-[0.22em] transition-all duration-200 hover:opacity-80"
                 style={{
-                  background: "#9E7B45",
-                  borderColor: "#9E7B45",
+                  background: "#5A6458",
+                  borderColor: "#5A6458",
                   color: "#0A0B09",
                 }}
               >
@@ -173,8 +173,8 @@ export function Footer({ locale, onQuoteFormOpen }: FooterProps) {
                     href={s.href}
                     className="inline-flex border px-5 py-2.5 text-[10px] uppercase tracking-[0.22em] transition-all duration-200 hover:opacity-80"
                     style={{
-                      background: "#9E7B45",
-                      borderColor: "#9E7B45",
+                      background: "#5A6458",
+                      borderColor: "#5A6458",
                       color: "#0A0B09",
                     }}
                   >
