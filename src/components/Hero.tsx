@@ -2,7 +2,6 @@ import { useRef } from "react";
 import { motion } from "motion/react";
 import type { Locale } from "@/lib/copy";
 import { copy } from "@/lib/copy";
-import { HeroEditorial } from "./HeroEditorial";
 
 type HeroProps = {
   locale: Locale;
@@ -81,6 +80,7 @@ export function Hero({ locale }: HeroProps) {
           <button
             type="button"
             className="btn-primary"
+            style={{ background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(4px)', border: '1px solid rgba(255,255,255,0.3)', color: '#F0EBE1', padding: '12px 28px', borderRadius: '2px', letterSpacing: '0.1em' }}
             onClick={() => {
               const el = document.getElementById("collection");
               if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -91,6 +91,7 @@ export function Hero({ locale }: HeroProps) {
           <button
             type="button"
             className="btn-ghost"
+            style={{ background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(4px)', border: '1px solid rgba(255,255,255,0.3)', color: '#F0EBE1', padding: '12px 28px', borderRadius: '2px', letterSpacing: '0.1em' }}
             onClick={() => {
               const el = document.getElementById("a-propos");
               if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -103,19 +104,6 @@ export function Hero({ locale }: HeroProps) {
 
       <div className="hero__scroll-indicator" aria-hidden="true">
         <div className="hero__scroll-line" />
-      </div>
-
-      {/* Hero Editorial trust bar rendered below video content */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          zIndex: 2,
-        }}
-      >
-        <HeroEditorial locale={locale} />
       </div>
     </section>
   );
